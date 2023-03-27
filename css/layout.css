@@ -806,12 +806,13 @@
 .f-container {
     width: 100%;
     background: #efefef;
-    padding: 0px 100px;
     box-sizing: border-box;
     position: relative;
     z-index: 3;
 }
-
+.f-container .inner{
+    padding-bottom: 60px;
+}
 .f-container .footer-menu {
     display: flex;
     justify-content: space-between;
@@ -824,15 +825,19 @@
 }
 
 .footer-menu .item .title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #1c1c1c;
-    box-sizing: border-box;
     margin: 30px 0px 20px;
+    border-bottom: solid 1px black;
+    display: inline;
+    padding: 10px;
 }
 
 .footer-menu .item .menu-list li {
     margin: 20px 0px;
+    width: 140px;
+    white-space: nowrap;
 }
 
 .footer-menu .item .menu-list li:hover{
@@ -845,7 +850,7 @@
 }
 
 .footer-menu .item .menu-list:last-of-type li {
-    font-size: 12px;
+    font-size: 16px;
     color: #444;
 }
 

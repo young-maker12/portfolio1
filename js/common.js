@@ -94,6 +94,7 @@ function searchBox() {
             box.slideUp(300)
         } else {
             box.slideDown(300)
+            $('.textBox').val("")
         }
     }
     function x() {
@@ -101,6 +102,7 @@ function searchBox() {
     }
     function close(){
         box.slideUp(300)
+        $('.textBox').val("")
     }
 }
 // --------------------------------------------------------------------------------------
