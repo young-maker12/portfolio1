@@ -37,7 +37,7 @@ function scroll() {
             $('.banner').slideUp()
             $('.h-wrapper').addClass('on')
             $('.menu-list').children().addClass('on')
-            $('.slide').stop().slideUp()
+            $('.slide').slideUp()
         } else {
             $('.banner').stop().slideDown()
             $('.menu-list').children().removeClass('on')
@@ -138,18 +138,21 @@ function modal() {
 }
 // --------------------------------------------------------------------------------------
 function menuList() {
-    var menu = $('.menu').children('a');
+    var menu = $('.menu');
     var content = $('.menu-wrap')
-    menu.on('mouseenter', onMouse)
+    menu.children('a').on('mouseenter', onMouse)
     $('.menu-wrapper').on('mouseleave', leaveMouse)
     content.hide()
 
     function onMouse() {
+        menu.children('a').removeClass('selected')
+        $(this).addClass('selected')
         content.fadeOut()
         $(this).next().stop().fadeIn()
     }
     function leaveMouse() {
         content.stop().fadeOut()
+        menu.children('a').removeClass('selected')
     }
 }
 // --------------------------------------------------------------------------------------

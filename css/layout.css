@@ -140,7 +140,6 @@
 
 /* -------------------------------------------------------------------------------------------------------------- */
 .h-center {
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,14 +163,13 @@
 
 .menu-wrapper {
     width: 100%;
-    position: relative;
     z-index: 1;
+    position: relative;
 }
 
 .menu-wrapper .menu-list {
     display: flex;
     justify-content: center;
-    position: relative;
     height: 60px;
     gap: 60px;
     margin: 0px auto;
@@ -179,7 +177,8 @@
 
 .menu-list .menu {
     display: flex;
-    padding: 20px;
+    padding: 10px 20px 20px;
+    white-space: nowrap;
 }
 
 .menu-list .menu.on {
@@ -193,10 +192,17 @@
     color: black;
     font-weight: bold;
     align-items: center;
+    border-bottom: none;
+    width: 0%;
+    transition: 300ms;
+}
+
+.menu-list .menu>a.selected {
+    width: 100%;
+    border-bottom: solid 1px black;
 }
 
 .menu-wrap {
-    width: 100vw;
     height: 400px;
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
@@ -205,14 +211,16 @@
     box-sizing: border-box;
     position: absolute;
     padding: 0px 400px;
-    left: -440px;
+    left: -35%;
     top: 60px;
+    gap: 30px;
 }
 
 .menu-wrap>ul>li>a {
     color: black;
-    font-size: 16px;
     border-bottom: solid 1px black;
+    font-weight: bold;
+    margin-bottom: 24px;
 }
 
 .menu-wrap ul {
@@ -221,21 +229,18 @@
 
 .menu-wrap ul li {
     width: 230px;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     cursor: pointer;
+    color: #444444;
 }
-
-.menu-wrap ul li:first-child {
+.menu-wrap ul li:hover{
+    color: black;
     font-weight: bold;
-    margin-bottom: 24px;
 }
 
 .menu-wrap>ul:last-child li {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .menu-wrap>ul:last-child li div {
@@ -243,10 +248,10 @@
     height: 300px;
     background-image: url(../images/DISCOVERY-SET.jpg);
     background-size: cover;
+    margin-bottom: 10px;
 }
 
-.menu-wrap>ul:last-child li a {
-    border-bottom: none;
+.menu-wrap>ul:last-child li>a {
     font-weight: bold;
 }
 
@@ -772,12 +777,14 @@
     padding: 100px 125px 100px;
     background-color: #ffffff;
 }
-.explane-container .title{
+
+.explane-container .title {
     display: flex;
     justify-content: center;
     font-size: 30px;
     margin-bottom: 30px;
 }
+
 /* -------------------------------------------------------------------------------------------------------------- */
 .scroll-top {
     background: url(../images/top-btn.png) no-repeat center center;
@@ -828,6 +835,10 @@
     margin: 20px 0px;
 }
 
+.footer-menu .item .menu-list li:hover{
+    font-weight: bold;
+    color: black;
+}
 .footer-menu .item .menu-list li a {
     padding: 0;
     color: #444;
